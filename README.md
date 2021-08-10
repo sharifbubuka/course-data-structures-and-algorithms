@@ -20,6 +20,7 @@ Data Structures and Algorithms implemented using Typescript.
 >>>> - [ ] [Deque (Double ended queue)](src/data-structures/linear/queue/deque.ts) <br>
 >>>> - [ ] [Circular queue](src/data-structures/linear/queue/circular-queue.ts) <br>
 
+
 >> ### [Non Linea Data Structures](#non-linear-data-structures)
 >>> [Trees](#linked-lists)
 >>> [Graphs](#linked-lists)
