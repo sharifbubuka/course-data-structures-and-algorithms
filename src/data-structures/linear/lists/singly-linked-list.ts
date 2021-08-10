@@ -1,46 +1,58 @@
-import { SinglyLinkedNode } from '../../../nodes/nodes';
+import { SinglyLinkedNode } from '../../../../utils/nodes/nodes';
 
-type Value = any;
-type List = Array<SinglyLinkedNode>;
-type Node = SinglyLinkedNode;
+interface List {
+  head: SinglyLinkedNode;
+  size: number;
+}
 
 export default class SinglyLinkedList {
-  private list: List = [];
-  private head: Node;
+  private list: List | undefined;
 
   constructor() {
-    this.head = new SinglyLinkedNode();
+    this.list = undefined;
   }
 
-  public List(): SinglyLinkedList {
-    return new SinglyLinkedList();
-  }
+  public append(value: any) {
+    const newNode = new SinglyLinkedNode(value);
 
-  public add(value: Value) {
-    if (this.list.length === 0) {
-      let newNode = new SinglyLinkedNode(value, undefined);
-      this.list.push(newNode);
-      this.head = newNode;
+    if (this.list) {
+      newNode.next = this.list.head;
+      this.list.head = newNode;
+      this.list.size++;
     } else {
-      let newNode = new SinglyLinkedNode(value, this.list[this.list.length -1]);
-      this.list.push(newNode);
-      this.head = newNode;
+      this.list = {
+        head: newNode,
+        size: 1
+      }
     }
   }
 
-  public remove(): boolean {
-    return false;
+  public peek(): any | Error {
+    if (!this.list) throw new Error('EMPTY_LIST_ERROR');
+    return this.list.head.value;
+  }
+
+  public pop(): any | Error {
+    if (!this.list) throw new Error('EMPTY_ERROR');
+    
+    const prevHead = this.list.head;
+
+    if (this.list.head.next) {
+      this.list.head = prevHead.next;
+      this.list.size--;
+      return prevHead.value;
+    } else {
+      this.list = undefined;
+      return prevHead.value;
+    }
   }
 
   public isEmpty(): boolean {
-    if (this.head.getValue() === undefined) {
-      return true;
-    } else {
-      return false;
-    }
+    return !this.list;
   }
 
   public size(): number {
-    return this.list.length;
+    if (this.list) return this.list.size;
+    return 0;
   }
 }
