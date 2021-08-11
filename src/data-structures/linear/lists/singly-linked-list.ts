@@ -1,6 +1,6 @@
 import { SinglyLinkedNode } from '../../../utils/nodes/nodes';
 
-interface List {
+type List = {
   head: SinglyLinkedNode;
   size: number;
 }
@@ -32,8 +32,8 @@ export default class SinglyLinkedList {
     return this.list.head.value;
   }
 
-  public pop(): any | Error {
-    if (!this.list) return new Error('EMPTY_ERROR');
+  public pop(): IteratorResult<any> | Error {
+    if (!this.list) return new Error('EMPTY_LIST_ERROR');
     
     const prevHead = this.list.head;
 
@@ -55,4 +55,35 @@ export default class SinglyLinkedList {
     if (this.list) return this.list.size;
     return 0;
   }
+
+  public clear() {
+    this.list = undefined;
+  }
+
+  public find() {
+
+  }
+
+  public sort() {
+
+  }
+
+  public merge() {
+
+  }
+
+  *[Symbol.iterator](): Iterator<any> {
+    if (this.list) {
+      let temp: SinglyLinkedNode | any;
+      for (temp = this.list.head; temp !== null; temp = this.list.head) {
+        yield temp;
+      }
+    } else {
+      return;
+    }
+  }
 }
+
+// const list = new SinglyLinkedList();
+// list.append(5);
+// console.log([...list])

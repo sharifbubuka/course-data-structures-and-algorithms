@@ -13,6 +13,13 @@ describe('Singly Linked List', () => {
     })
   })
 
+  describe.skip('iterable', () => {
+    it('should be iterable', () => {
+      list.append(1); list.append(2); list.append(3);
+      expect([...list]).toBeDefined();
+    })
+  })
+
   describe('append()', () => {
     it('should append to list', () => {
       list.append(4);
@@ -35,13 +42,10 @@ describe('Singly Linked List', () => {
       expect(list.pop()).toBeInstanceOf(Error);
     })
 
-    it('should return head value and reduce list size on non empty list', () => {
+    it('should return an iterable result on non empty list', () => {
       list.append(1); list.append(2);
-      const result = list.pop();
-      expect(result).toEqual(2);
-      expect(list.size()).toEqual(1);
-      expect(list.peek()).toEqual(1);
-      const secondResult = list.pop();
+      expect(list.pop()).toEqual(2);
+      expect(list.pop()).toEqual(1);
     })
   })
 
