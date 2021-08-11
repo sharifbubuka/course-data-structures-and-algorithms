@@ -9,6 +9,7 @@
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "test-lists": "npm run test tests/data-structures/linear/lists",
     "test:watch": "jest --watchAll"
   },
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@types/jest": "^26.0.24",
     "@types/node": "^16.4.13",
+    "coveralls": "^3.1.1",
     "ts-node": "^10.2.0",
     "typescript": "^4.3.5"
   }

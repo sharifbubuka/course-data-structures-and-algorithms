@@ -105,3 +105,6 @@ dist
 
 # personal files 
 plan
+
+# coveralls 
+.coveralls.yml
