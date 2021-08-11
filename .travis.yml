@@ -2,6 +2,5 @@ language: node_js
 node_js:
   - '15'
 script:
-  - npm run i
   - npm run tests
   - npm run coveralls
