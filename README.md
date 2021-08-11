@@ -1,3 +1,7 @@
+<!-- Badges -->
+[![Tests](https://github.com/sharifbubuka/course-data-structures-and-algorithms/actions/workflows/main.yml/badge.svg)](https://github.com/sharifbubuka/course-data-structures-and-algorithms/actions/workflows/main.yml)
+<!-- Badges -->
+
 ![Data Structures and Algorithms Banner](assets/images/repo-banner.png)
 
 Data Structures and Algorithms implemented using Typescript.
