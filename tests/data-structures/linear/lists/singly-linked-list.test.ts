@@ -21,8 +21,8 @@ describe('Singly Linked List', () => {
   })
 
   describe('peek()', () => {
-    it.skip('should throw error on empty list', () => {
-      
+    it('should return an error on empty list', () => {
+      expect(list.peek()).toBeInstanceOf(Error);
     })
     it('should return head value in non empty list', () => {
       list.append(7);
@@ -31,8 +31,8 @@ describe('Singly Linked List', () => {
   })
 
   describe('pop()', () => {
-    it.skip('should throw error on empty list', () => {
-
+    it('should return an error on empty list', () => {
+      expect(list.pop()).toBeInstanceOf(Error);
     })
 
     it('should return head value and reduce list size on non empty list', () => {
@@ -50,7 +50,7 @@ describe('Singly Linked List', () => {
       expect(list.isEmpty()).toEqual(true);
     })
 
-    it('should return false is list is not empty', () => {
+    it('should return false if list is not empty', () => {
       list.append(78);
       expect(list.isEmpty()).toEqual(false);
     })

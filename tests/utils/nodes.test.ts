@@ -1,17 +1,50 @@
-import { SinglyLinkedNode } from '../../utils/nodes/nodes';
+import { 
+  SinglyLinkedNode,
+  DoublyLinkedNode 
+} from '../../src/utils/nodes/nodes';
 
-describe('Singly Linked Node', () => {
-  it('should be instantiable', () => {
-    const node = new SinglyLinkedNode(8);
-    expect(node.value).toEqual(8);
-    expect(node.next).toBeUndefined();
+describe('Nodes', () => {
+
+  describe('Singly Linked Node', () => {
+    let node: SinglyLinkedNode;
+    beforeEach(() => {
+      node = new SinglyLinkedNode(6)
+    })
+
+    it('should be instantiable', () => {
+      expect(node.value).toEqual(6);
+      expect(node.next).toBeUndefined();
+    })
+
+    it('should permit a node as its value and next', () => {
+      const testNode = new SinglyLinkedNode(6);
+      node.value = testNode;
+      node.next = testNode;
+      expect(node.value).toEqual(testNode);
+      expect(node.next).toEqual(testNode);
+    })
   })
 
-  it('should permit a Singly linked node as its value and next', () => {
-    const firstNode = new SinglyLinkedNode(8);
-    const secondNode = new SinglyLinkedNode(6);
-    const thirdNode = new SinglyLinkedNode(firstNode, secondNode);
-    expect(thirdNode.value).toEqual(firstNode);
-    expect(thirdNode.next).toEqual(secondNode);
+  describe('Doubly Linked Node', () => {
+    let node: DoublyLinkedNode;
+    
+    beforeEach(() => {
+      node = new DoublyLinkedNode(6);
+    })
+    it('should be instantiable', () => {
+      expect(node.value).toEqual(6);
+      expect(node.prev).toBeUndefined();
+      expect(node.next).toBeUndefined();
+    })
+
+    it('should permit a node as its value, prev and next', () => {
+      const testNode = new DoublyLinkedNode(6);
+      node.prev = testNode;
+      node.value = testNode;
+      node.next = testNode;
+      expect(node.prev).toEqual(testNode);
+      expect(node.value).toEqual(testNode);
+      expect(node.next).toEqual(testNode);
+    })
   })
 })

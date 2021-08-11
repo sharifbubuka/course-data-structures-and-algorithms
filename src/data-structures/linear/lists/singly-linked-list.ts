@@ -1,4 +1,4 @@
-import { SinglyLinkedNode } from '../../../../utils/nodes/nodes';
+import { SinglyLinkedNode } from '../../../utils/nodes/nodes';
 
 interface List {
   head: SinglyLinkedNode;
@@ -28,12 +28,12 @@ export default class SinglyLinkedList {
   }
 
   public peek(): any | Error {
-    if (!this.list) throw new Error('EMPTY_LIST_ERROR');
+    if (!this.list) return new Error('EMPTY_LIST_ERROR');
     return this.list.head.value;
   }
 
   public pop(): any | Error {
-    if (!this.list) throw new Error('EMPTY_ERROR');
+    if (!this.list) return new Error('EMPTY_ERROR');
     
     const prevHead = this.list.head;
 
