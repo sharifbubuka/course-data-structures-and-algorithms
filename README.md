@@ -1,6 +1,7 @@
 <!-- Badges -->
-[![Tests](https://github.com/sharifbubuka/course-data-structures-and-algorithms/actions/workflows/main.yml/badge.svg)](https://github.com/sharifbubuka/course-data-structures-and-algorithms/actions/workflows/main.yml)
+[![Tests](https://travis-ci.com/sharifbubuka/course-data-structures-and-algorithms.svg?branch=main)](https://travis-ci.com/sharifbubuka/course-data-structures-and-algorithms)
 [![Coverage Status](https://coveralls.io/repos/github/sharifbubuka/course-data-structures-and-algorithms/badge.svg?branch=main)](https://coveralls.io/github/sharifbubuka/course-data-structures-and-algorithms?branch=main)
+![Licence](https://img.shields.io/github/license/sharifbubuka/course-data-structures-and-algorithms?color=%2356ea1a&style=plastic)
 <!-- Badges -->
 
 ![Data Structures and Algorithms Banner](assets/images/repo-banner.png)
