@@ -1,0 +1,1 @@
+export const EMPTY_LIST_ERROR = 'EMPTY_LIST_ERROR';

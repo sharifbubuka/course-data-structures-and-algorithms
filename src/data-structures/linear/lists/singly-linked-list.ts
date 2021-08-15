@@ -1,4 +1,6 @@
-import { SinglyLinkedNode } from '../../../utils/nodes/nodes';
+import { SinglyLinkedNode } from '../../../utils/nodes';
+import { areEqual } from '../../../utils/funcs';
+import { EMPTY_LIST_ERROR } from '../../../utils/errors';
 
 type List = {
   head: SinglyLinkedNode;
@@ -28,12 +30,12 @@ export default class SinglyLinkedList {
   }
 
   public peek(): any | Error {
-    if (!this.list) return new Error('EMPTY_LIST_ERROR');
+    if (!this.list) return new Error(EMPTY_LIST_ERROR);
     return this.list.head.value;
   }
 
   public pop(): IteratorResult<any> | Error {
-    if (!this.list) return new Error('EMPTY_LIST_ERROR');
+    if (!this.list) return new Error(EMPTY_LIST_ERROR);
     
     const prevHead = this.list.head;
 
@@ -60,18 +62,16 @@ export default class SinglyLinkedList {
     this.list = undefined;
   }
 
-  public find() {
-
+  public contains(value: any): boolean {
+    const index = this.indexOf(value);
+    return index !== -1;
   }
 
-  public sort() {
-
+  public merge(newList: SinglyLinkedList){
+    
   }
 
-  public merge() {
-
-  }
-
+  // Helper functions
   *[Symbol.iterator](): Iterator<any> {
     if (this.list) {
       let temp: SinglyLinkedNode | any;
@@ -82,8 +82,16 @@ export default class SinglyLinkedList {
       return;
     }
   }
-}
 
-// const list = new SinglyLinkedList();
-// list.append(5);
-// console.log([...list])
+  private indexOf(value: any) {
+    if (!this.list) return -1;
+    let index = 0;
+    let head = this.list.head;
+    while (!areEqual(head.value, value)) {
+      if (!head.next) return -1;
+      head = head.next;
+      index++;
+    }
+    return index;
+  }
+}

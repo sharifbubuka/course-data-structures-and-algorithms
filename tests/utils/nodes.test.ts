@@ -1,7 +1,7 @@
 import { 
   SinglyLinkedNode,
   DoublyLinkedNode 
-} from '../../src/utils/nodes/nodes';
+} from '../../src/utils/nodes';
 
 describe('Nodes', () => {
 

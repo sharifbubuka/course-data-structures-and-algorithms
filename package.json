@@ -6,9 +6,6 @@
   "directories": {
     "test": "tests"
   },
-  "engines": {
-    "node": ">="
-  },
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",

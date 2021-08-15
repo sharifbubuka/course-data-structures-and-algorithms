@@ -1,6 +1,6 @@
 import SinglyLinkedList from '../../../../src/data-structures/linear/lists/singly-linked-list';
 
-describe('Singly Linked List', () => {
+describe('Singly Linked List Tests', () => {
   let list: SinglyLinkedList;
 
   beforeEach(() => {
@@ -17,6 +17,7 @@ describe('Singly Linked List', () => {
     it('should be iterable', () => {
       list.append(1); list.append(2); list.append(3);
       expect([...list]).toBeDefined();
+      expect([...list][0]).toEqual(1);
     })
   })
 
@@ -65,6 +66,19 @@ describe('Singly Linked List', () => {
       expect(list.size()).toEqual(0);
       list.append('value');
       expect(list.size()).toEqual(1);
+    })
+  })
+
+  describe('contains()', () => {
+    it('should return true if value exists in list', () => {
+      list.append(1); list.append(2); list.append(3);
+      expect(list.contains(2)).toEqual(true);
+    })
+
+    it('should return false when value does not exist in list', () => {
+      expect(list.contains(10)).toEqual(false);
+      // list.append(1); list.append(2); list.append(3);
+      // expect(list.contains('test')).toEqual(false);
     })
   })
 })
