@@ -16,37 +16,38 @@ describe('Doubly Linked List Tests', () => {
     it.skip('should be iterable', () => {
       list.appendStart(1); list.appendStart(2);
       expect([...list]).toBeDefined();
-      expect([...list][0]).toEqual(1);
+      expect([...list][0]).toBe(1);
     })
   })
 
-  describe.skip('appendStart()', () => {
+  describe('appendStart()', () => {
     it('should append to start of list', () => {
       list.appendStart(1);
       expect(list.size()).toEqual(1);
       expect(list.peekStart()).toEqual(1);
       expect(list.peekEnd()).toEqual(1);
-      expect(list.contains(1)).toBe(true);
+      // expect(list.contains(1)).toBe(true);
+
       list.appendStart(2);
       expect(list.size()).toEqual(2);
       expect(list.peekStart()).toEqual(2);
       expect(list.peekEnd()).toEqual(1);
-      expect(list.contains(2)).toBe(true);
+      // expect(list.contains(2)).toBe(true);
     })
   })
 
-  describe.skip('appendEnd()', () => {
+  describe('appendEnd()', () => {
     it('should append to end of the list', () => {
       list.appendEnd(1);
       expect(list.size()).toEqual(1);
       expect(list.peekStart()).toEqual(1);
       expect(list.peekEnd()).toEqual(1);
-      expect(list.contains(1)).toBe(true);
+      // expect(list.contains(1)).toBe(true);
       list.appendEnd(2);
       expect(list.size()).toEqual(2);
       expect(list.peekStart()).toEqual(1);
-      expect(list.peekEnd()).toEqual(1);
-      expect(list.contains(2)).toBe(true);
+      expect(list.peekEnd()).toEqual(2);
+      // expect(list.contains(2)).toBe(true);
     })
   })
 
@@ -66,7 +67,7 @@ describe('Doubly Linked List Tests', () => {
     })
   })
 
-  describe.skip('deleteStart()', () => {
+  describe('deleteStart()', () => {
     it('should return error if list is empty', () => {
       expect(list.deleteStart()).toBeInstanceOf(Error);
     })
@@ -77,26 +78,26 @@ describe('Doubly Linked List Tests', () => {
       expect(list.size()).toEqual(1);
       expect(list.peekStart()).toEqual(1);
       expect(list.peekEnd()).toEqual(1);
-      expect(list.contains(2)).toBe(false);
+      // expect(list.contains(2)).toBe(false);
     })
   })
 
-  describe.skip('deleteEnd()', () => {
+  describe('deleteEnd()', () => {
     it('should return error if list is empty', () => {
       expect(list.deleteEnd()).toBeInstanceOf(Error);
     })
 
-    it('should delete at start of the list', () => {
+    it('should delete at end of the list', () => {
       list.appendStart(1); list.appendStart(2);
       list.deleteEnd();
       expect(list.size()).toEqual(1);
       expect(list.peekStart()).toEqual(2);
       expect(list.peekEnd()).toEqual(2);
-      expect(list.contains(1)).toBe(false);
+      // expect(list.contains(1)).toBe(false);
     })
   })
 
-  describe.skip('peekStart()', () => {
+  describe('peekStart()', () => {
     it('should return error on an empty list', () => {
       expect(list.peekStart()).toBeInstanceOf(Error);
     })
@@ -108,7 +109,7 @@ describe('Doubly Linked List Tests', () => {
     })
   })
 
-  describe.skip('peekEnd()', () => {
+  describe('peekEnd()', () => {
     it('should return error on an empty list', () => {
       expect(list.peekEnd()).toBeInstanceOf(Error);
     })
@@ -120,7 +121,7 @@ describe('Doubly Linked List Tests', () => {
     })
   })
 
-  describe.skip('isEmpty()', () => {
+  describe('isEmpty()', () => {
     it('should return true if list is empty, otherwise false', () => {
       expect(list.isEmpty()).toBe(true);
       list.appendStart(1);
@@ -128,7 +129,7 @@ describe('Doubly Linked List Tests', () => {
     })
   })
 
-  describe.skip('size()', () => {
+  describe('size()', () => {
     it('should return the size of the list', () => {
       expect(list.size()).toEqual(0);
       list.appendStart(1);
@@ -152,10 +153,7 @@ describe('Doubly Linked List Tests', () => {
       list.appendStart(1); list.appendStart(2);
       list.clear();
       expect(list.size()).toEqual(0);
+      // expect(list.contains(1)).toBe(false);
     })
   })
-
-  describe.skip('', () => {})
-
-  describe.skip('', () => {})
 })
