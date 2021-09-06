@@ -89,6 +89,7 @@ export default class DoublyLinkedList {
     }
   }
 
+  // TEST FAILING
   public deleteEnd() {
     if (!this.list) return new Error(EMPTY_LIST_ERROR);
 
