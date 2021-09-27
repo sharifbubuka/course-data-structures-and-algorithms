@@ -11,6 +11,7 @@
     "coverage": "jest --coverage",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "test-lists": "npm run test tests/data-structures/linear/lists",
+    "test-stack": "npm run test tests/data-structures/linear/stack",
     "test:watch": "jest --watchAll"
   },
   "repository": {

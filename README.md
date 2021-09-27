@@ -16,7 +16,7 @@
       - [ ] [Doubly linked list](src/data-structures/linear/lists/doubly-linked-list.ts)
       - [ ] [Circular linked list](src/data-structures/linear/lists/circular-linked-list.ts)
     - #### Stack 
-      - [ ] [Array implementation of stack](src/data-structures/linear/stack/array-implementation-of-stack.ts)
+      - [x] [Array implementation of stack](src/data-structures/linear/stack/array-implementation-of-stack.ts)
       - [ ] [Linked list implementation of stack](src/data-structures/linear/stack/linked-list-implementation-of-stack.ts)
       - [ ] [Single queue implementation of stack](src/data-structures/linear/stack/single-queue-implementation-of-stack.ts)
       - [ ] [Double queue implementation of stack](src/data-structures/linear/stack/double-queue-implementation-of-stack.ts)
