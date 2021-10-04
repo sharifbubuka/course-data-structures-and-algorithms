@@ -36,6 +36,7 @@ export default class ArrayStack {
         if (this.top === -1) {
             return new Error(errors.UNDERFLOW_ERROR);
         }
+        this.arr.pop();
         this.top -= 1;
     }
 

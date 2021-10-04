@@ -34,7 +34,7 @@ export default class SinglyLinkedList {
     return this.list.head.value;
   }
 
-  public pop(): IteratorResult<any> | Error {
+  public pop(): any | Error {
     if (!this.list) return new Error(EMPTY_LIST_ERROR);
     
     const prevHead = this.list.head;
